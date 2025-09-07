@@ -12,7 +12,7 @@ int main() {
 
  int nthreads = omp_get_num_threads(); //-->Returns total number of threads
 
- printf("Hello World from thread %d / %d\n", tid, nthreads);
+ printf("Mohib ali Khan from thread %d / %d\n", tid, nthreads);
  }
  return 0;
 }
