@@ -1,6 +1,6 @@
-## " Parallel-and-Distributed-Computing" 
+# Parallel-and-Distributed-Computing"
 
-### LAB # 2 - Implementing Hello World in OpenMP
+## LAB # 2 - Implementing Hello World in OpenMP
 
 - Lab Objective: To understand and work with the core syntax of OpenMP for multithreaded
 programming.
