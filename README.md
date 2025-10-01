@@ -40,3 +40,35 @@ programming.
 ### 4. Work done
 - Each thread prints i and its thread ID, then increments i.
 - At the end, 10 different lines are printed, with i going from 1 → 10.
+
+
+## LAB # 4 - Parallel For loop in OpenMP
+
+- Lab Objective: To understand and work with the parallel execution of for loop in OpenMP.
+- Task - Write a parallel for loop employing 4 threads for 10 loop iterations.
+
+## Explanation Step-by-Step Working (in 4 steps)
+
+1. num_threads(4) → 4 threads created
+The loop will run using 4 threads in parallel.
+
+2. #pragma omp parallel for
+The loop iterations (i = 1 to 10) are divided among the 4 threads.
+
+3. Inside the loop
+Each thread picks up some values of i, prints its thread ID and the iteration number.
+
+4. Output
+The order is not fixed, because threads run in parallel. But all i = 1 to 10 will be executed.
+
+- **By default OpenMP parallel use static scheduling** 
+>     Thread 0 → i = 1, 2, 3
+>     Thread 1 → i = 4, 5, 6
+>     Thread 2 → i = 7, 8
+>     Thread 3 → i = 9, 10
+-  **Jab tak aap schedule(dynamic) ya schedule(guided) na likho**
+>     The thread 0 → i = 2
+>     The thread 1 → i = 1,5,6,7,8,9,10
+>     The thread 2 → i = 3
+>     The thread 3 → i = 4
+      
