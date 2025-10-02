@@ -71,4 +71,29 @@ The order is not fixed, because threads run in parallel. But all i = 1 to 10 wil
 >     The thread 1 → i = 1,5,6,7,8,9,10
 >     The thread 2 → i = 3
 >     The thread 3 → i = 4
-      
+
+**Also Mam can assign a task to Print**
+
+## LAB # 5 - Reduction across threads for Parallel For loop synchronization
+
+- Lab Objective: To understand and work with the parallel reduction operator in OpenMP.
+- Task - Write a parallel for loop employing 4 threads for 10 loop iterations.
+
+## Explanation Step-by-Step Working (in 4 steps)
+
+1. int n = 10;
+Loop chalega i = 1 se 10 tak.
+
+2. Loop parallel run hoga multiple threads ke sath.
+
+3. reduction(+: total) ka matlab:
+
+- Har thread apna private copy of total banata hai.
+- Har thread apne hisaab se sum calculate karta hai.
+- End mein sab results combine karke (reduce) ek final total bana dete hain.
+
+4. Loop Execution
+Har thread kuch i values lega, unka sum apne private total mein add karega.
+
+5. Reduction Step
+OpenMP automatically sab threads ke partial totals ko add karke ek global total banata hai.
