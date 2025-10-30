@@ -97,3 +97,34 @@ Har thread kuch i values lega, unka sum apne private total mein add karega.
 
 5. Reduction Step
 OpenMP automatically sab threads ke partial totals ko add karke ek global total banata hai.
+
+## LAB # 6 - Shared and Private variables in OpenMP
+- Lab Objective: To understand the shared and private variables for threads in OpenMp.
+- Task: **Shared** vs **Private** Variables in OpenMP
+
+## Explanation:
+- In OpenMP, variables can be shared or private among threads.
+### 🟩 Shared Variables
+- Shared variables are accessible by all threads. Any modification by one thread affects the others. They are declared using the shared clause.
+- A shared variable means all threads see and modify the same memory location.
+- If one thread changes it, all others will see the updated value.
+- Declared using:
+>#pragma omp parallel shared(var1, var2)
+
+### 🟦 Private Variables
+- Private variables are unique to each thread. Each thread has its own copy, and changes are not visible to others. They are declared using the private clause.
+- A private variable means each thread gets its own copy.
+- Any change one thread makes does not affect others.
+- Declared using:
+>#pragma omp parallel private(var)
+
+- Default behavior:
+- Global and static variables → shared
+- Local variables inside parallel region → private
+
+| Clause            | Each thread has its own copy? | Initialized from main variable? | Example Result        |
+| ----------------- | ----------------------------- | ------------------------------- | --------------------- |
+| `private(x)`      | ✅ Yes                         | ❌ No → garbage values           | Random numbers        |
+| `firstprivate(x)` | ✅ Yes                         | ✅ Yes → same as main `x`        | Correct & predictable |
+
+ 
